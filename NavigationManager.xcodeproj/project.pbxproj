@@ -9,13 +9,17 @@
 /* Begin PBXBuildFile section */
 		BB933EC229D06E5D0050218C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB933EC129D06E5D0050218C /* AppDelegate.swift */; };
 		BB933EC429D06E5D0050218C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB933EC329D06E5D0050218C /* SceneDelegate.swift */; };
-		BB933EC629D06E5D0050218C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB933EC529D06E5D0050218C /* ViewController.swift */; };
 		BB933EC929D06E5D0050218C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BB933EC729D06E5D0050218C /* Main.storyboard */; };
 		BB933ECB29D06E5E0050218C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BB933ECA29D06E5E0050218C /* Assets.xcassets */; };
 		BB933ECE29D06E5E0050218C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BB933ECC29D06E5E0050218C /* LaunchScreen.storyboard */; };
 		BB933ED929D06E5E0050218C /* NavigationManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB933ED829D06E5E0050218C /* NavigationManagerTests.swift */; };
 		BB933EE329D06E5E0050218C /* NavigationManagerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB933EE229D06E5E0050218C /* NavigationManagerUITests.swift */; };
 		BB933EE529D06E5E0050218C /* NavigationManagerUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB933EE429D06E5E0050218C /* NavigationManagerUITestsLaunchTests.swift */; };
+		BB933EFB29D0703A0050218C /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB933EFA29D0703A0050218C /* MapViewController.swift */; };
+		BB933EFF29D079290050218C /* MapView+MapManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB933EFE29D079290050218C /* MapView+MapManager.swift */; };
+		BB933F0229D07AD10050218C /* MapView+ManagerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB933F0129D07AD10050218C /* MapView+ManagerDelegate.swift */; };
+		BB933F0629D092290050218C /* MapView+Delegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB933F0529D092290050218C /* MapView+Delegate.swift */; };
+		BB933F0829D094810050218C /* MapView+MakeRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB933F0729D094810050218C /* MapView+MakeRoute.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,7 +43,6 @@
 		BB933EBE29D06E5D0050218C /* NavigationManager.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NavigationManager.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BB933EC129D06E5D0050218C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BB933EC329D06E5D0050218C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		BB933EC529D06E5D0050218C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		BB933EC829D06E5D0050218C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		BB933ECA29D06E5E0050218C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BB933ECD29D06E5E0050218C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -49,6 +52,11 @@
 		BB933EDE29D06E5E0050218C /* NavigationManagerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NavigationManagerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		BB933EE229D06E5E0050218C /* NavigationManagerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationManagerUITests.swift; sourceTree = "<group>"; };
 		BB933EE429D06E5E0050218C /* NavigationManagerUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationManagerUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		BB933EFA29D0703A0050218C /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		BB933EFE29D079290050218C /* MapView+MapManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MapView+MapManager.swift"; sourceTree = "<group>"; };
+		BB933F0129D07AD10050218C /* MapView+ManagerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MapView+ManagerDelegate.swift"; sourceTree = "<group>"; };
+		BB933F0529D092290050218C /* MapView+Delegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MapView+Delegate.swift"; sourceTree = "<group>"; };
+		BB933F0729D094810050218C /* MapView+MakeRoute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MapView+MakeRoute.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,13 +107,10 @@
 		BB933EC029D06E5D0050218C /* NavigationManager */ = {
 			isa = PBXGroup;
 			children = (
-				BB933EC129D06E5D0050218C /* AppDelegate.swift */,
-				BB933EC329D06E5D0050218C /* SceneDelegate.swift */,
-				BB933EC529D06E5D0050218C /* ViewController.swift */,
-				BB933EC729D06E5D0050218C /* Main.storyboard */,
-				BB933ECA29D06E5E0050218C /* Assets.xcassets */,
-				BB933ECC29D06E5E0050218C /* LaunchScreen.storyboard */,
-				BB933ECF29D06E5E0050218C /* Info.plist */,
+				BB933EF829D06ED90050218C /* Environments */,
+				BB933EF729D06ECD0050218C /* Resources */,
+				BB933EF629D06EC50050218C /* Core */,
+				BB933EF129D06E940050218C /* App */,
 			);
 			path = NavigationManager;
 			sourceTree = "<group>";
@@ -125,6 +130,101 @@
 				BB933EE429D06E5E0050218C /* NavigationManagerUITestsLaunchTests.swift */,
 			);
 			path = NavigationManagerUITests;
+			sourceTree = "<group>";
+		};
+		BB933EF129D06E940050218C /* App */ = {
+			isa = PBXGroup;
+			children = (
+				BB933EF529D06EBD0050218C /* Flows */,
+				BB933EF429D06EB20050218C /* Assembly */,
+				BB933EF329D06EAA0050218C /* Entity */,
+				BB933EF229D06EA20050218C /* BusinessLogic */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		BB933EF229D06EA20050218C /* BusinessLogic */ = {
+			isa = PBXGroup;
+			children = (
+				BB933EFD29D078C60050218C /* Application */,
+				BB933EFC29D078BA0050218C /* Map */,
+			);
+			path = BusinessLogic;
+			sourceTree = "<group>";
+		};
+		BB933EF329D06EAA0050218C /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Entity;
+			sourceTree = "<group>";
+		};
+		BB933EF429D06EB20050218C /* Assembly */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Assembly;
+			sourceTree = "<group>";
+		};
+		BB933EF529D06EBD0050218C /* Flows */ = {
+			isa = PBXGroup;
+			children = (
+				BB933EF929D070230050218C /* MapViewController */,
+			);
+			path = Flows;
+			sourceTree = "<group>";
+		};
+		BB933EF629D06EC50050218C /* Core */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		BB933EF729D06ECD0050218C /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				BB933EC729D06E5D0050218C /* Main.storyboard */,
+				BB933ECC29D06E5E0050218C /* LaunchScreen.storyboard */,
+				BB933ECA29D06E5E0050218C /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		BB933EF829D06ED90050218C /* Environments */ = {
+			isa = PBXGroup;
+			children = (
+				BB933ECF29D06E5E0050218C /* Info.plist */,
+			);
+			path = Environments;
+			sourceTree = "<group>";
+		};
+		BB933EF929D070230050218C /* MapViewController */ = {
+			isa = PBXGroup;
+			children = (
+				BB933EFA29D0703A0050218C /* MapViewController.swift */,
+			);
+			path = MapViewController;
+			sourceTree = "<group>";
+		};
+		BB933EFC29D078BA0050218C /* Map */ = {
+			isa = PBXGroup;
+			children = (
+				BB933EFE29D079290050218C /* MapView+MapManager.swift */,
+				BB933F0129D07AD10050218C /* MapView+ManagerDelegate.swift */,
+				BB933F0529D092290050218C /* MapView+Delegate.swift */,
+				BB933F0729D094810050218C /* MapView+MakeRoute.swift */,
+			);
+			path = Map;
+			sourceTree = "<group>";
+		};
+		BB933EFD29D078C60050218C /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				BB933EC329D06E5D0050218C /* SceneDelegate.swift */,
+				BB933EC129D06E5D0050218C /* AppDelegate.swift */,
+			);
+			path = Application;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -258,9 +358,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BB933EC629D06E5D0050218C /* ViewController.swift in Sources */,
+				BB933EFF29D079290050218C /* MapView+MapManager.swift in Sources */,
+				BB933F0229D07AD10050218C /* MapView+ManagerDelegate.swift in Sources */,
+				BB933F0629D092290050218C /* MapView+Delegate.swift in Sources */,
 				BB933EC229D06E5D0050218C /* AppDelegate.swift in Sources */,
 				BB933EC429D06E5D0050218C /* SceneDelegate.swift in Sources */,
+				BB933F0829D094810050218C /* MapView+MakeRoute.swift in Sources */,
+				BB933EFB29D0703A0050218C /* MapViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -439,7 +543,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 3HD2DR99MJ;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = NavigationManager/Info.plist;
+				INFOPLIST_FILE = NavigationManager/Environments/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -467,7 +571,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 3HD2DR99MJ;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = NavigationManager/Info.plist;
+				INFOPLIST_FILE = NavigationManager/Environments/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
