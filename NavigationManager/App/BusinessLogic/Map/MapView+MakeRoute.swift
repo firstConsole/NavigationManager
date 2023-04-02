@@ -46,7 +46,6 @@ extension MapViewController {
                 if let error = error {
                     print("Error: \(error)")
                 }
-
                 return
             }
 
