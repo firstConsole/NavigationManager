@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BB34D66E29D9CFC500C18F4A /* MapView+AddPin.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB34D66D29D9CFC500C18F4A /* MapView+AddPin.swift */; };
 		BB933EC229D06E5D0050218C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB933EC129D06E5D0050218C /* AppDelegate.swift */; };
 		BB933EC429D06E5D0050218C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB933EC329D06E5D0050218C /* SceneDelegate.swift */; };
 		BB933EC929D06E5D0050218C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BB933EC729D06E5D0050218C /* Main.storyboard */; };
@@ -40,6 +41,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		BB34D66D29D9CFC500C18F4A /* MapView+AddPin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MapView+AddPin.swift"; sourceTree = "<group>"; };
 		BB933EBE29D06E5D0050218C /* NavigationManager.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NavigationManager.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BB933EC129D06E5D0050218C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BB933EC329D06E5D0050218C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -214,6 +216,7 @@
 				BB933F0129D07AD10050218C /* MapView+ManagerDelegate.swift */,
 				BB933F0529D092290050218C /* MapView+Delegate.swift */,
 				BB933F0729D094810050218C /* MapView+MakeRoute.swift */,
+				BB34D66D29D9CFC500C18F4A /* MapView+AddPin.swift */,
 			);
 			path = Map;
 			sourceTree = "<group>";
@@ -361,6 +364,7 @@
 				BB933EFF29D079290050218C /* MapView+MapManager.swift in Sources */,
 				BB933F0229D07AD10050218C /* MapView+ManagerDelegate.swift in Sources */,
 				BB933F0629D092290050218C /* MapView+Delegate.swift in Sources */,
+				BB34D66E29D9CFC500C18F4A /* MapView+AddPin.swift in Sources */,
 				BB933EC229D06E5D0050218C /* AppDelegate.swift in Sources */,
 				BB933EC429D06E5D0050218C /* SceneDelegate.swift in Sources */,
 				BB933F0829D094810050218C /* MapView+MakeRoute.swift in Sources */,
@@ -544,6 +548,7 @@
 				DEVELOPMENT_TEAM = 3HD2DR99MJ;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = NavigationManager/Environments/Info.plist;
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -572,6 +577,7 @@
 				DEVELOPMENT_TEAM = 3HD2DR99MJ;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = NavigationManager/Environments/Info.plist;
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
