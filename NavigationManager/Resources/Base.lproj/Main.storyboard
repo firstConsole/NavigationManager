@@ -20,25 +20,88 @@
                         <subviews>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LAX-c3-hGi">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                                <gestureRecognizers/>
                                 <standardMapConfiguration key="preferredConfiguration"/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="g22-jd-auj" appends="YES" id="EvZ-tx-Lca"/>
+                                    <outletCollection property="gestureRecognizers" destination="fnQ-Cg-a44" appends="YES" id="d86-lA-itl"/>
+                                </connections>
                             </mapView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MBv-YS-yAm">
+                                <rect key="frame" x="196" y="666" width="160" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="160" id="R5w-dn-9hO"/>
+                                    <constraint firstAttribute="height" constant="40" id="mAH-rf-gL2"/>
+                                </constraints>
+                                <color key="tintColor" systemColor="systemGreenColor"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Начать маршрут"/>
+                                <connections>
+                                    <action selector="makeRoute:" destination="BYZ-38-t0r" eventType="touchUpInside" id="kUh-Ls-xxd"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Np9-9N-gNq">
+                                <rect key="frame" x="196" y="618" width="160" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="160" id="MOx-i9-aBP"/>
+                                    <constraint firstAttribute="height" constant="40" id="fWf-OC-ltP"/>
+                                </constraints>
+                                <color key="tintColor" systemColor="systemPinkColor"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Закончить"/>
+                                <connections>
+                                    <action selector="finishRoute:" destination="BYZ-38-t0r" eventType="touchUpInside" id="gWI-Wb-yHs"/>
+                                    <action selector="makeRoute:" destination="BYZ-38-t0r" eventType="touchUpInside" id="YWZ-pI-vmj"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vO7-de-r1h">
+                                <rect key="frame" x="16" y="666" width="160" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="6Ap-f9-KUs"/>
+                                    <constraint firstAttribute="width" constant="160" id="xL0-7h-lJB"/>
+                                </constraints>
+                                <color key="tintColor" systemColor="systemOrangeColor"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Предыдущий"/>
+                                <connections>
+                                    <action selector="makeRoute:" destination="BYZ-38-t0r" eventType="touchUpInside" id="1AT-fE-iIa"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="Np9-9N-gNq" firstAttribute="leading" secondItem="LAX-c3-hGi" secondAttribute="trailing" constant="-179" id="IRF-gs-xF7"/>
+                            <constraint firstItem="MBv-YS-yAm" firstAttribute="leading" secondItem="LAX-c3-hGi" secondAttribute="trailing" constant="-179" id="PeW-2K-W0G"/>
+                            <constraint firstItem="MBv-YS-yAm" firstAttribute="top" secondItem="LAX-c3-hGi" secondAttribute="bottom" constant="-146" id="Pzl-WA-wbk"/>
+                            <constraint firstItem="MBv-YS-yAm" firstAttribute="top" secondItem="Np9-9N-gNq" secondAttribute="bottom" constant="8" symbolic="YES" id="RY5-Kq-oVu"/>
                             <constraint firstAttribute="bottom" secondItem="LAX-c3-hGi" secondAttribute="bottom" id="Vjd-lb-WCQ"/>
                             <constraint firstItem="LAX-c3-hGi" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="Ydc-aZ-Jve"/>
                             <constraint firstAttribute="trailing" secondItem="LAX-c3-hGi" secondAttribute="trailing" id="aWr-SX-3jG"/>
+                            <constraint firstItem="MBv-YS-yAm" firstAttribute="leading" secondItem="vO7-de-r1h" secondAttribute="trailing" constant="20" id="bBH-Yd-51u"/>
                             <constraint firstItem="LAX-c3-hGi" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="kxY-cD-olC"/>
+                            <constraint firstItem="vO7-de-r1h" firstAttribute="top" secondItem="LAX-c3-hGi" secondAttribute="bottom" constant="-146" id="rAt-ze-6Dg"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Карта" image="map" catalog="system" selectedImage="map.fill" id="yCK-et-IxX"/>
                     <navigationItem key="navigationItem" title="Карта" id="ioJ-ZV-P9v"/>
                     <connections>
+                        <outlet property="addButton" destination="MBv-YS-yAm" id="pHX-dU-NrJ"/>
+                        <outlet property="finishButton" destination="Np9-9N-gNq" id="8ck-pS-rvd"/>
                         <outlet property="mapView" destination="LAX-c3-hGi" id="OEu-zZ-qZ5"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <pongPressGestureRecognizer allowableMovement="10" minimumPressDuration="0.5" id="g22-jd-auj">
+                    <connections>
+                        <action selector="addPin:" destination="BYZ-38-t0r" id="WKR-mR-YEa"/>
+                    </connections>
+                </pongPressGestureRecognizer>
+                <tapGestureRecognizer id="fnQ-Cg-a44">
+                    <connections>
+                        <action selector="clearMap:" destination="BYZ-38-t0r" id="jin-Hb-Zwi"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="1989.5999999999999" y="2.9556650246305418"/>
         </scene>
@@ -67,6 +130,7 @@
                     <toolbarItems/>
                     <navigationItem key="navigationItem" title="Карта" id="mPi-ZY-8HG" customClass="Карта"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="RR0-Dh-eU6">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" systemColor="secondaryLabelColor"/>
                         <color key="tintColor" name="AccentColor"/>
@@ -95,6 +159,15 @@
         </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGreenColor">
+            <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemOrangeColor">
+            <color red="1" green="0.58431372549019611" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemPinkColor">
+            <color red="1" green="0.17647058823529413" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

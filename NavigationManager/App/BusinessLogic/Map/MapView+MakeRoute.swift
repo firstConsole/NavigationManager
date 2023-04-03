@@ -17,10 +17,10 @@ extension MapViewController {
         let sourceMapItem = MKMapItem(placemark: sourcePlacemark)
         let destinationMapItem = MKMapItem(placemark: destinationPlacemark)
 
-        let sourceAnnotation = MKPointAnnotation()
+        let currentPlace = MKPointAnnotation()
 
         if let location = sourcePlacemark.location {
-            sourceAnnotation.coordinate = location.coordinate
+            currentPlace.coordinate = location.coordinate
         }
 
         let destinationAnnotation = MKPointAnnotation()
@@ -29,7 +29,7 @@ extension MapViewController {
             destinationAnnotation.coordinate = location.coordinate
         }
 
-        self.mapView.showAnnotations([sourceAnnotation,destinationAnnotation], animated: true )
+        self.mapView.showAnnotations([currentPlace,destinationAnnotation], animated: true )
 
         let directionRequest = MKDirections.Request()
         directionRequest.source = sourceMapItem
@@ -46,16 +46,24 @@ extension MapViewController {
                 if let error = error {
                     print("Error: \(error)")
                 }
-
                 return
             }
 
             let route = response.routes[0]
-
+            
+            self.route = route
             self.mapView.addOverlay((route.polyline), level: MKOverlayLevel.aboveRoads)
 
             let rect = route.polyline.boundingMapRect
+            
             self.mapView.setRegion(MKCoordinateRegion(rect), animated: true)
         }
+    }
+    
+    func finishRoute(route: MKRoute) {
+        self.routes.append(route)
+        self.mapView.removeOverlays(self.mapView.overlays)
+        self.mapView.removeAnnotations(self.mapView.annotations)
+        self.addButton.isEnabled = false
     }
 }
