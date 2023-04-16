@@ -16,6 +16,7 @@ extension MapViewController {
         locationManager.delegate = self
         mapView.delegate = self
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
+        runBackgroundTask()
     }
     
     // MARK: - Checking for location service enable

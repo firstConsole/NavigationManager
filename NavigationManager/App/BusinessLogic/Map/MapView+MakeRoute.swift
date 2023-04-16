@@ -32,11 +32,11 @@ extension MapViewController {
         self.mapView.showAnnotations([currentPlace,destinationAnnotation], animated: true )
 
         let directionRequest = MKDirections.Request()
+        
         directionRequest.source = sourceMapItem
         directionRequest.destination = destinationMapItem
         directionRequest.transportType = .automobile
-
-        // Calculate the direction
+        
         let directions = MKDirections(request: directionRequest)
 
         directions.calculate {
@@ -58,12 +58,5 @@ extension MapViewController {
             
             self.mapView.setRegion(MKCoordinateRegion(rect), animated: true)
         }
-    }
-    
-    func finishRoute(route: MKRoute) {
-        self.routes.append(route)
-        self.mapView.removeOverlays(self.mapView.overlays)
-        self.mapView.removeAnnotations(self.mapView.annotations)
-        self.addButton.isEnabled = false
     }
 }

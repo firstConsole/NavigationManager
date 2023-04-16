@@ -8,21 +8,28 @@
 import UIKit
 import MapKit
 import CoreLocation
+import CoreData
 
-final class MapViewController: UIViewController {
+final class MapViewController: UIViewController, Storyboarded {
     
     // MARK: - IBOutlets
     
     @IBOutlet weak var mapView: MKMapView!
     @IBOutlet weak var addButton: UIButton!
     @IBOutlet weak var finishButton: UIButton!
+    @IBOutlet weak var returnRouteButton: UIButton!
+    @IBOutlet weak var makeRouteButton: UIButton!
     
     // MARK: - Properties
     
+    weak var appCoordinator: AppCoordinator?
     let locationManager = CLLocationManager()
     var pinCoordinates: CLLocationCoordinate2D?
     var route: MKRoute?
-    var routes: [MKRoute] = []
+    var routeData: [NSManagedObject] = []
+    var firstPlace: CLLocationCoordinate2D?
+    var secondPlace: CLLocationCoordinate2D?
+    var backgroundTask: UIBackgroundTaskIdentifier?
     
     // MARK: - UI present
     
@@ -30,14 +37,19 @@ final class MapViewController: UIViewController {
         super.viewDidLoad()
         
         addButton.isEnabled = false
+        makeRouteButton.isEnabled = false
         finishButton.isEnabled = false
-        
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
         checkLocationEnabled()
+        loadRoute()
+        
+        if routeData.isEmpty {
+            returnRouteButton.isEnabled = false
+        }
     }
     
     // MARK: - Add pin and clear map functions
@@ -68,18 +80,37 @@ final class MapViewController: UIViewController {
             return
         }
         
-        showRouteOnMap(pickupCoordinate: currentPlace, destinationCoordinate: destination)
+        self.firstPlace = currentPlace
+        self.secondPlace = destination
         
+        self.saveRoute(startPoint: currentPlace, destinationPoint: destination)
+        
+        showRouteOnMap(pickupCoordinate: currentPlace, destinationCoordinate: destination)
         finishButton.isEnabled = true
+        makeRouteButton.isEnabled = false
+        if !routeData.isEmpty {
+            returnRouteButton.isEnabled = true
+            
+        }
     }
     
     @IBAction func finishRoute(_ sender: UIButton) {
-        guard let route = self.route else {
-            return
-        }
+        self.mapView.removeOverlays(mapView.overlays)
+        self.mapView.removeAnnotations(mapView.annotations)
+        self.firstPlace = nil
+        self.secondPlace = nil
         
-        finishRoute(route: route)
+        finishButton.isEnabled = false
+        makeRouteButton.isEnabled = true
         
-        print(self.routes.count)
+    }
+    
+    @IBAction func returnRoute(_ sender: UIButton) {
+//        guard let firstPlace = firstPlace,
+//              let secondPlace = secondPlace else {
+//            return
+//        }
+        
+//        showRouteOnMap(pickupCoordinate: firstPlace, destinationCoordinate: secondPlace)
     }
 }
